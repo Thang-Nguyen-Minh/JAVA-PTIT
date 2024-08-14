@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import static java.lang.Math.*;
+import java.math.*;
+public class Basic {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            BigInteger a=sc.nextBigInteger();
+            BigInteger b=sc.nextBigInteger();
+            BigInteger gcd=a.gcd(b);
+            //Tính LCM của a và b bằng cách nhân a và b, sau đó chia cho GCD.
+            BigInteger lcm = (a.multiply(b)).divide(gcd);
+            System.out.println(lcm + " " + gcd);
+        }
+    }
+}
