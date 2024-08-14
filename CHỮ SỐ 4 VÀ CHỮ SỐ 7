@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import static java.lang.Math.*;
+public class Basic {
+    public static long check(long n){
+        long cnt1=0,cnt2=0;
+        while(n>0){
+            long a=n%10;
+            if(a==4) ++cnt1;
+            if(a==7) ++cnt2;
+            n=n/10;
+        }
+        if(cnt1+cnt2==4 || cnt1+cnt2==7) return 1;
+        else return 0;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Long n=sc.nextLong();
+        if(check(n)==1) System.out.println("YES");
+        else System.out.println("NO");
+    }
+}
