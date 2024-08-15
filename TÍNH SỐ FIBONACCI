@@ -1,0 +1,32 @@
+package BASIC;
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import static java.lang.Math.*;
+import java.math.*;
+public class Basic {
+    public static long fibo(int n) {
+        if (n == 1 || n == 2) {
+            return 1;
+        }
+
+        // Array to store Fibonacci numbers up to nth
+        long[] fib = new long[n + 1];
+        fib[1] = 1;
+        fib[2] = 1;
+
+        for (int i = 3; i <= n; i++) {
+            fib[i] = fib[i - 1] + fib[i - 2];
+        }
+
+        return fib[n];
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while(t-->0){
+            long n=sc.nextLong();
+            System.out.println(fibo((int) n));
+        }
+    }
+}
