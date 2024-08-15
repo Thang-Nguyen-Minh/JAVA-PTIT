@@ -1,0 +1,25 @@
+package BASIC;
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.lang.Math.*;
+public class Basic {
+    public static boolean tp(String s){
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)!='0' && s.charAt(i)!='1' && s.charAt(i)!='2') return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        sc.nextLine();
+        for (int i = 0; i < t; i++) {
+            String s = sc.nextLine();
+            if (tp(s)) {
+                System.out.println("YES");
+            } else System.out.println("NO");
+        }
+    }
+}
+
