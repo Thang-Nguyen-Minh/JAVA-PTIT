@@ -1,0 +1,22 @@
+package BASIC;
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import static java.lang.Math.*;
+import java.math.*;
+public class Basic {
+    public static long gt(long n){
+        long sum=1;
+        for(int i=1;i<=n;i++) sum=sum*i;
+        return sum;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long n=sc.nextLong();
+        long sum=0;
+        for(int i=1;i<=n;i++){
+            sum+=gt(i);
+        }
+        System.out.println(sum);
+    }
+}
