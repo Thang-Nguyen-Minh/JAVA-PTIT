@@ -1,0 +1,22 @@
+package BASIC;
+import java.math.BigInteger;
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import static java.lang.Math.*;
+public class Basic {
+    public static long check(long n){
+        long m= (long) sqrt(n);
+        if(m*m==n) return 1;
+        else return 0;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t=scanner.nextInt();
+        while(t-->0){
+            long n=scanner.nextInt();
+            if(check(n)==1) System.out.println("YES");
+            else System.out.println("NO");
+        }
+    }
+}
