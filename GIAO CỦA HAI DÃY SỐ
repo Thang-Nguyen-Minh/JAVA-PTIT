@@ -1,0 +1,47 @@
+package ARRAY;
+import java.util.*;
+import static java.lang.Math.*;
+//Đã được sắp xếp + các phần tử khác nhau
+//Tư tưởng : Trộn 2 dãy lại với nhau
+public class IntersectionOf2Sequences {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int[] a = new int[n];
+        int[] b = new int[m];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+        for (int i = 0; i < m; i++) {
+            b[i] = sc.nextInt();
+        }
+        // Sắp xếp dãy a[] và b[]
+        Arrays.sort(a);
+        Arrays.sort(b);
+        // Tạo 2 mảng sa[] và sb[] để lưu các phần tử khác nhau của dãy a[] và b[]
+        int[] sa = Arrays.stream(a).distinct().toArray();
+        int[] sb = Arrays.stream(b).distinct().toArray();
+        // Tạo mảng giao[] để lưu kết quả
+        int[] giao = new int[Math.min(sa.length, sb.length)];
+        int g = 0; // Biến đếm số lượng phần tử trong mảng giao[]
+        // Trộn 2 dãy đã được sắp xếp và loại bỏ trùng lặp
+        int i = 0, j = 0;
+        while (i < sa.length && j < sb.length) {
+            if (sa[i] == sb[j]) {
+                giao[g++] = sa[i];
+                i++;
+                j++;
+            } else if (sa[i] < sb[j]) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+        // In kết quả
+        for (int k = 0; k < g; k++) {
+            System.out.print(giao[k] + " ");
+        }
+        System.out.println();
+    }
+}
