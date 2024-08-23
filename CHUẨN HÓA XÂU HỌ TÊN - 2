@@ -1,0 +1,31 @@
+package STRING;
+
+import java.util.Scanner;
+
+public class StandardizeNameString2 {
+    public static String VietHoa(String s){
+        if(s==null || s.isEmpty()) return s;
+        String s1=String.valueOf(s.charAt(0)).toUpperCase();
+        StringBuilder s2=new StringBuilder();
+        for(int i=1;i<s.length();i++){
+            s2.append(String.valueOf(s.charAt(i)).toLowerCase());
+        }
+        return s1+s2.toString();
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        sc.nextLine();
+        while (t-- > 0) {
+            String s = sc.nextLine();
+            String s1=s.trim();
+            String[] a=s1.split("\\s+");
+            for(int i=1;i<a.length;i++){
+                System.out.print(VietHoa(a[i]));
+                if(i<a.length-1) System.out.print(" ");
+            }
+            System.out.println(", "+a[0].toUpperCase());
+            System.out.println();
+        }
+    }
+}
