@@ -1,0 +1,13 @@
+package STRING;
+
+import java.util.*;
+
+public class MarkTheLetter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        Set<String> se=new HashSet<>();
+        for(int i=0;i<s.length();i++) se.add(String.valueOf(s.charAt(i)));
+        System.out.println(se.size());
+    }
+}
