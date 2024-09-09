@@ -1,0 +1,31 @@
+package ARRAY;
+import java.util.*;
+
+public class BSDS {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        // Đọc dữ liệu vào mảng
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+        // Sắp xếp mảng
+        Arrays.sort(a);
+        // Tìm giá trị lớn nhất trong mảng
+        int maxVal = a[n - 1];
+        // Biến chỉ số cho mảng a
+        int j = 0;
+        boolean check = false;
+        // Kiểm tra các số từ 1 đến maxVal
+        for (int i = 1; i <= maxVal; i++) {
+            if (j < n && a[j] == i) {
+                j++;
+            } else {
+                System.out.println(i);  // In số thiếu trên một dòng
+                check=true;
+            }
+        }
+        if(!check) System.out.println("Excellent!");
+    }
+}
